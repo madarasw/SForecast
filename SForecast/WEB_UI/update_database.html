@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Update Database</h1>
+
+	<div class="form-section">
+<div class="radio-group">
+  <label>
+    <input type="radio" name="database" value="Financial news dataset">
+    Financial news dataset
+  </label>
+
+  <label>
+    <input type="radio" name="database" value="Forecast deviation dataset">
+    Forecast deviation dataset
+  </label>
+</div>
+<br>
+
+		  <!-- Date & Time -->
+<div class="aligned-grid">
+
+  <div>
+    <label>Start date:</label>
+    <input id="start-date" type="date">
+  </div>
+
+  <div>
+    <label>End date:</label>
+    <input id="end-date" type="date">
+  </div>
+  
+    <select id="macro-var">
+    <option selected disabled>Select Macroeconomic Variable</option>
+    <option>Inflation</option>
+    <option>GDP</option>
+	</select>
+<!--
+<div>
+  <label>Variable</label>
+  <select id="variable" >
+    <option value="" selected disabled>Select a variable</option>
+
+    <option>Real Gross Domestic Product (GDP)</option>
+    <option>Nominal Gross Domestic Product (GDP)</option>
+    <option>GDP per Capita</option>
+    <option>Inflation (Consumer Price Index – CPI)</option>
+    <option>Unemployment Rate</option>
+    <option>Current Account Balance</option>
+    <option>General Government Fiscal Balance</option>
+    <option>General Government Gross Debt</option>
+    <option>Exchange Rate</option>
+    <option>International Reserves</option>
+  </select>
+</div>
+-->
+</div>
+<br>
+
+	<div>
+	<label for="query">Query:</label>
+	<textarea
+		id="query"
+		placeholder='("expected inflation" OR "CPI projection") AND ("higher than expected" OR "lower than expected")'
+		rows="4"
+		style="width: 100%; resize: vertical;"
+	></textarea>
+	</div>
+
+  <!-- Buttons -->
+  <div class="button-group">
+    <button onclick="checkData()">Check</button>
+    <button onclick="checkData()">Add data</button>
+    <button onclick="checkData()" class="danger">Remove data</button>
+  </div>
+
+<p id="action-message" class="message"></p>
+
+  
+<script>
+function checkData() {
+  const selectedDb = document.querySelector('input[name="database"]:checked');
+  if (!selectedDb) {
+    alert("Please select a dataset!");
+    return;
+  }
+
+  console.log("Selected dataset value:", selectedDb.value); // check in browser console
+
+  const payload = {
+    dataset: selectedDb.value,
+    start_date: document.getElementById("start-date").value,
+    end_date: document.getElementById("end-date").value,
+    macro_var: document.getElementById("macro-var").value,
+    query: document.getElementById("query").value
+  };
+
+  fetch("http://127.0.0.1:8000/check", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("action-message").innerText = data.message;
+  })
+  .catch(err => {
+    document.getElementById("action-message").innerText = "Error connecting to backend";
+    console.error(err);
+  });
+}
+</script>
+
+
+
+</div>
+  
+  
+</body>
+</html>
+
+
+
+
+
+

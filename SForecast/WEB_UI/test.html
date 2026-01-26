@@ -1,0 +1,34 @@
+<input type="text" id="variable" placeholder="Variable">
+<input type="text" id="geography" placeholder="Geography">
+<input type="date" id="start-date">
+<input type="date" id="end-date">
+
+<button onclick="checkData()">Check</button>
+
+<p id="action-message"></p>
+
+<script>
+function checkData() {
+  const payload = {
+    dataset: document.querySelector('input[name="database"]:checked')?.value || "N/A",
+    start_date: document.getElementById("start-date").value,
+    end_date: document.getElementById("end-date").value,
+    variable: document.getElementById("variable").value,
+    geography: document.getElementById("geography").value
+  };
+
+  fetch("http://127.0.0.1:8000/check", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("action-message").innerText = data.message;
+  })
+  .catch(err => {
+    document.getElementById("action-message").innerText = "Error connecting to backend";
+    console.error(err);
+  });
+}
+</script>

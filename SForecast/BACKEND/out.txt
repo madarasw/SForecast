@@ -1,0 +1,5 @@
+Dataset: Financial news dataset
+Start Date: 2026-01-01
+End Date: 2026-01-26
+Macro_var: Inflation
+Query: ("expected inflation" OR "CPI projection") AND ("higher than expected" OR "lower than expected")

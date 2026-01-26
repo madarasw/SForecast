@@ -1,0 +1,356 @@
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #1f3734;
+}
+
+.container {
+  max-width: 720px;
+  margin: 80px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #25ebe4;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin-bottom: 24px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 16px;
+}
+
+select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 16px;
+}
+
+textarea {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-group label {
+  font-size: 16px;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32x;
+}
+
+.tab {
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #111827;              /* 👈 force visible text */
+  border-bottom: 1px solid #ffffff;
+  font-weight: 600;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: -1px;
+}
+
+.tab {
+  padding: 10px 18px;
+  background: #e5e7eb;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-bottom: none;
+  color: #374151;
+}
+
+.tab:hover {
+  background: #f3f4f6;
+}
+
+.tab.active {
+  background: #ffffff;
+  border-bottom: 1px solid white;
+  font-weight: 600;
+}
+
+.tab-panel {
+  border: 1px solid #d1d5db;
+  border-radius: 0 12px 12px 12px;
+  padding: 32px;
+  background: #ffffff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: -1px;
+}
+
+.tab {
+  padding: 10px 18px;
+  background: #e5e7eb;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-bottom: none;
+  color: #374151;
+}
+
+.tab:hover {
+  background: #f3f4f6;
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #111827;              /* ✅ visible text */
+  border-color: #d1d5db;
+  border-bottom: 1px solid #ffffff;
+  font-weight: 600;
+}
+
+.tab-panel {
+  border: 1px solid #d1d5db;
+  border-radius: 0 12px 12px 12px;
+  padding: 32px;
+  background: #ffffff;
+}
+
+.tab-panel iframe {
+  width: 100%;
+  height: 500px;        /* adjust as needed */
+  border: none;
+  overflow: hidden;    /* removes scrollbar */
+}
+
+
+/* Date & time grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* Make date inputs cleaner */
+.form-grid input[type="date"],
+.form-grid select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+/* Variable + Geography inline */
+.inline-fields {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.inline-fields div {
+  flex: 1;
+}
+
+.inline-fields input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #374151;
+}
+
+/* Textarea */
+textarea {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #374151;	
+}
+
+.button-group {
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+}
+
+.button-group button {
+  width: 140px;      /* all buttons same width */
+  height: 40px;      /* all buttons same height */
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: #b3f5f5;
+  color: #3b3b3b;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+/* Hover effect */
+.button-group button:hover {
+  background: #82f5f5;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+/* Click effect */
+.button-group button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
+}
+
+/* Danger button */
+.button-group .danger {
+  background: #f5c4b3;
+}
+
+.button-group .danger:hover {
+  background: #fab096;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
+}
+
+/* Optional: disabled state (future-proof) */
+.button-group button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* All inputs and selects */
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+select {
+  padding: 6px 10px;        /* reduce vertical padding */
+  font-size: 13px;          /* slightly smaller text */
+  border-radius: 6px;       /* slightly smaller corners */
+  height: 32px;             /* consistent, compact height */
+  box-sizing: border-box;   /* ensures padding doesn't add extra height */
+}
+
+/* Variable & Geography inputs */
+.inline-fields input {
+  height: 32px;             /* match compact style */
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* Optional: maintain spacing between label and input */
+label {
+  margin-bottom: 4px;       /* slightly tighter label spacing */
+  font-size: 13px;
+}
+
+
+.date-time-group select {
+  height: 32px;
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+
+.aligned-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 24px;   /* row-gap column-gap */
+}
+
+.aligned-grid label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.aligned-grid input {
+  width: 100%;
+  height: 32px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+}
+
+
+
+

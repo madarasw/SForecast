@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forecast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Browser-style Tabs -->
+    <div class="tab-bar">
+      <div class="tab active" onclick="openTab(this, 'forecast.html')">Forecast</div>
+      <div class="tab" onclick="openTab(this, 'update_llm.html')">Update LLM</div>
+      <div class="tab" onclick="openTab(this, 'update_database.html')">Update Database</div>
+    </div>
+
+    <!-- Content Panel -->
+    <div class="tab-panel">
+      <iframe
+        id="tab-frame"
+        src="forecast.html"
+        frameborder="0"
+		scrolling="no">
+      </iframe>
+    </div>
+
+  </div>
+
+  <script>
+    function openTab(tabElement, page) {
+      document.querySelectorAll('.tab').forEach(t =>
+        t.classList.remove('active')
+      );
+
+      tabElement.classList.add('active');
+      document.getElementById('tab-frame').src = page;
+    }
+  </script>
+</body>
+</html>
