@@ -1,2 +1,36 @@
 *25/5/2026
 Created this file
+
+*26/5/2026
+Wenth through Autoglon documentation
+It has three methods: Tabular, Time series, Multimodal
+We need Time series only
+We can add 
+
+- We can use different series as additional covariates
+known covariates - known for the entire forecast horizon such as the day of the week
+past covariates - past time series
+
+- Chronos 2: https://arxiv.org/pdf/2510.15821
+We can finetune this model for a time series and make predictions (Included in autogluon timeseries)
+supports numeric and categorical covariates
+
+- Main determinants of inflation as per the modern economic analysis:
+Money Supply
+Fiscal Deficit
+Exchange Rate
+Output Gap
+Oil / Supply Shocks
+
+- Below papers identofy the determinants of inflation: 
+Effects of fiscal deficit and money M2 supply on inflation: Evidence from selected economies of Asia
+The impact of budget deficit on inflation: Insights of Sri Lanka
+It’s Never Different: Fiscal Policy Shocks and Inflation
+The Nexus Of Foreign Reserves, Exchange Rate And Inflation: Recent Empirical Evidence From Sri Lanka
+Exchange Rate Pass-Through: Evidence from Emerging Markets
+Effects of Exchange Rate, Output Gap, and Output Gap Volatility on Inflation Volatility in Turkey
+The Inflationary Risks of Expansionary Fiscal Policy
+Asymmetries, uncertainty and inflation: evidence from developed and emerging economies
+The Macroeconomic Effects of Oil Price Shocks
+Do fiscal deficits cause inflation? Evidence from Suriname
+Potency of Fiscal Variables in Inflation Variations in Sri Lanka
